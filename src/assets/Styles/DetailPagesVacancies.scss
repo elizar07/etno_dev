@@ -1,0 +1,265 @@
+#position {
+	padding: 30px 0;
+	.positions {
+		display: flex;
+		justify-content: space-between;
+		gap: 50px;
+		.position {
+			&--head {
+				h1 {
+					font-size: 36px;
+					letter-spacing: 0.03em;
+					color: #191f5d;
+					margin-bottom: 30px;
+				}
+				h3 {
+					font-size: 14px;
+					letter-spacing: 0.03em;
+					color: #a7b0c2;
+					margin-bottom: 5px;
+				}
+				h2 {
+					color: #191f5d;
+					letter-spacing: 0.03em;
+					font-weight: 700;
+					margin-bottom: 20px;
+					font-size: 18px;
+				}
+			}
+			&--descrtn {
+				h3 {
+					font-size: 14px;
+					letter-spacing: 0.03em;
+					color: #a7b0c2;
+					margin: 10px 0;
+				}
+				&__block {
+					border: 1px solid #e5e5e5;
+					box-sizing: border-box;
+					border-radius: 6px;
+					width: 590px;
+					padding: 25px 28px;
+					p {
+						color: #191f5d;
+						letter-spacing: 0.03em;
+						font-weight: 400;
+						&:first-child {
+							margin-bottom: 20px;
+						}
+					}
+					ul {
+						color: #191f5d;
+						padding-left: 30px;
+					}
+				}
+			}
+			&--connection {
+				display: flex;
+				flex-direction: column;
+				label {
+					font-size: 14px;
+					letter-spacing: 0.03em;
+					color: #a7b0c2;
+					margin-bottom: 2px;
+					margin-top: 20px;
+				}
+				a {
+					color: #0062c4;
+					font-weight: 800;
+					font-size: 18px;
+				}
+			}
+		}
+		.organization-divv {
+			display: flex;
+			// flex-direction: column;
+      // align-items: center;
+      align-items: center;
+      gap: 20px;
+			color: #191f5d;
+			letter-spacing: 0.03em;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 18px;
+			margin-bottom: 20px;
+      margin-left: -10px;
+      padding-left: 13px;
+			width: 694px;
+			height: 57px;
+			background: #f1f4f9;
+		}
+    .organization-div-text{
+      margin-top: 20px;
+    }
+		.similarVacancy {
+			padding-top: 15px;
+			h3 {
+				color: #191f5d;
+				font-size: 18px;
+				margin-bottom: 12px;
+			}
+			&--abt {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				&__block {
+					border-bottom: 1px dashed #e5e5e5;
+					width: 380px;
+					padding-bottom: 15px;
+					h4 {
+						color: #0062c4;
+						font-weight: 400;
+						font-size: 18px;
+					}
+					h5 {
+						color: #191f5d;
+						font-weight: 400;
+						font-size: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1365px) {
+	#position {
+		.positions {
+			gap: 10px;
+		}
+	}
+}
+@media (max-width: 1245px) {
+	#position {
+		.positions {
+			gap: 4px;
+			.similarVacancy {
+				h3 {
+					font-size: 16px;
+					margin-bottom: 5px;
+				}
+				&--abt {
+					&__block {
+						width: 340px;
+						h4 {
+							font-size: 13px;
+						}
+						h5 {
+							font-size: 12px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1170px) {
+	#position {
+		.positions {
+			flex-direction: column;
+			.position {
+				&--descrtn {
+					&__block {
+						width: 90%;
+					}
+				}
+			}
+			.similarVacancy {
+				padding-top: 20px;
+				padding-bottom: 30px;
+				h3 {
+					font-size: 22px;
+				}
+				&--abt {
+					&__block {
+						h4 {
+							font-size: 18px;
+						}
+						h5 {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 700px) {
+	#position {
+		.positions {
+			.position {
+				&--descrtn {
+					&__block {
+						width: 100%;
+					}
+				}
+			}
+			.organization-divv{
+		width: 625px;
+	}
+		}
+	}
+	
+}
+
+
+@media (max-width: 700px) {
+	#position {
+		padding: 10px 0;
+		.positions {
+			.position {
+				&--head {
+					h1 {
+						font-size: 24px;
+						margin-bottom: 15px;
+					}
+					h3 {
+						margin-top: 10px;
+					}
+					h2 {
+						font-size: 18px;
+					}
+				}
+				&--descrtn {
+					&__block {
+						padding: 20px 16px;
+						width: 100%;
+						p {
+							font-size: 15px;
+						}
+						ul {
+							font-size: 15px;
+						}
+					}
+				}
+			}
+			.similarVacancy {
+				h3 {
+					font-size: 18px;
+				}
+				&--abt {
+					&__block {
+						width: 280px;
+						border-bottom: none;
+						h4 {
+							font-size: 15px;
+						}
+						h5 {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 640px) {
+#position{
+	.positions{
+
+		.organization-divv{
+			width: 570px;
+		}
+	}
+}
+}

@@ -9,6 +9,7 @@ import Events from './components/Events'
 import Organizations from './components/Organizations'
 import Community from './components/Community'
 import Video from './components/Video';
+import DetailPagesVacancies from './components/DetailPagesVacancies'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path='/video' element={<Video/>} />
 					<Route path='/organizations' element={<Organizations/>} />
 					<Route path='community' element={<Community/>} />
+					<Route path='detailPagesVacancies' element={<DetailPagesVacancies/>}/>
 				</Routes>
 				<Footer />
 			</div>
