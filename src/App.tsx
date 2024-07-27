@@ -1,32 +1,33 @@
-import React from 'react';
-import './App.scss';
-import Header from './components/Header';
-import { Route, Routes } from 'react-router-dom';
-import Hero from './components/Hero';
-import Footer from './components/Footer';
-import Vacancies from './components/Vacancies';
-import Events from './components/Events'
-import Organizations from './components/Organizations'
+import { Route, Routes } from 'react-router-dom'
+import './App.scss'
 import Community from './components/Community'
-import Video from './components/Video';
 import DetailPagesVacancies from './components/DetailPagesVacancies'
+import Events from './components/Events'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Organizations from './components/Organizations'
+import Video from './components/Video'
+import VacancyList from './components/Vacancies'
+import Vacancies from './components/Vacancies/index'
 
 function App() {
-    return (
-			<div className=''>
-				<Header />
-				<Routes>
-					<Route path='/' element={<Hero />} />
-					<Route path='/Vacancies' element={<Vacancies />} />
-					<Route path='/events' element={<Events/>} />
-					<Route path='/video' element={<Video/>} />
-					<Route path='/organizations' element={<Organizations/>} />
-					<Route path='community' element={<Community/>} />
-					<Route path='detailPagesVacancies' element={<DetailPagesVacancies/>}/>
-				</Routes>
-				<Footer />
-			</div>
-		)
+	return (
+		<div className=''>
+			<Header />
+			<Routes>
+				<Route path='/' element={<Hero />} />
+				<Route path='/vacancyList' element={<VacancyList />} />
+				<Route path='/vacancies' element={<Vacancies/>}/>
+				<Route path='/events' element={<Events />} />
+				<Route path='/video' element={<Video />} />
+				<Route path='/organizations' element={<Organizations />} />
+				<Route path='/community' element={<Community />} />
+				<Route path='/detailPagesVacancies'element={<DetailPagesVacancies />}/>
+			</Routes>
+			<Footer />
+		</div>
+	)
 }
 
-export default App;
+export default App
