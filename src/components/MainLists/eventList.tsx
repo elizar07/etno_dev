@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Link } from 'react-router-dom'
 
 const EventList = (
@@ -15,9 +14,8 @@ const EventList = (
 }) => {
   const date1 = new Date(date);
 
-  // Extract year, month, and day
   const year = date1.getFullYear();
-  const month = date1.toLocaleString("default", { month: "long" }); // Months are 0-based, so add 1
+  const month = date1.toLocaleString("default", { month: "long" }); 
   const day = date1.getDate();
   const hours = date1.getHours();
   const minutes = date1.getMinutes();
@@ -25,7 +23,7 @@ const EventList = (
 const formattedMinutes = minutes.toString().padStart(2, '0');
 
 	return (
-		<div>
+		<div id='EventList'>
 			<Link to={'/eventDetals'}>
 				<div className='events'>
 					<div className='events--foto'>
