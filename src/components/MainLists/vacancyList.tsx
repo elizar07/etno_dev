@@ -40,7 +40,7 @@ const VacancyList = ({
 							<span>
 								Компания <br />
 							</span>
-							{companyName}
+							{companyName}ertytr
 						</h4>
 					</div>
 					<div className='jobs-item-field-jobsTitle'>

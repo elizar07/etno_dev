@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
-import VacancyList from './vacancyList'
-import { dblClick } from '@testing-library/user-event/dist/click'
+import VacancyList from '../MainLists/vacancyList'
 const Vacancies = () => {
 	const navigate = useNavigate()
   const { data, loading } = useFetch()
