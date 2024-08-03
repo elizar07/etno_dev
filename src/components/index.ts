@@ -6,6 +6,6 @@ export * from './DetailPagesVacancies'
 export * from './Events'
 export * from './Organizations'
 export * from './Vacancies'
-export * from './Video'
+export * from './Video/index.jsx'
 
 
