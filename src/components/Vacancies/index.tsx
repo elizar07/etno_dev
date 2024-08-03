@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import VacancyList from '../MainLists/vacancyList'
-const Vacancies = () => {
+
+export const Vacancies = () => {
 	const navigate = useNavigate()
   const { data, loading } = useFetch()
 	function DetailPages() {
@@ -23,7 +24,6 @@ if(loading){
 										key={index}
 										companyName={job.organization_name}
 										jobTitle={job.position}
-										paymentType={job.paymentType}
 										priceFrom={job.price_from}
 										priceTo={job.price_to}
 										type={job.type}
@@ -42,4 +42,3 @@ if(loading){
 	)
 }
 
-export default Vacancies

@@ -1,4 +1,4 @@
-const Organizations = () => {
+export const Organizations = () => {
 	return (
 		<div id='organizations'>
 			<div className='container'>
@@ -89,4 +89,3 @@ const Organizations = () => {
 	)
 }
 
-export default Organizations

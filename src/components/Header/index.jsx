@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { SlArrowRightCircle } from 'react-icons/sl'
 import { VscClose } from 'react-icons/vsc'
 
-function Header() {
+export function Header() {
 	const [isBurgerOpen, setIsBurgerOpen] = useState(false)
 	const navigate = useNavigate()
 
@@ -118,4 +118,4 @@ function Header() {
 	)
 }
 
-export default Header
+

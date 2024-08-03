@@ -4,7 +4,7 @@ import footerLogo from '../../assets/img/Dev kg logo.svg'
 import footerlogoKg from '../../assets/img/footer logo Kg.png'
 import { useNavigate } from 'react-router-dom'
 
-function Footer() {
+export function Footer() {
 	const navigate = useNavigate()
 
 	function logoFooter() {
@@ -73,4 +73,3 @@ function Footer() {
 	)
 }
 
-export default Footer

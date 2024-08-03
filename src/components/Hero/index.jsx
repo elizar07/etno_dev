@@ -2,7 +2,7 @@ import logo from '../../assets/img/logo.jpg'
 import logoHero from '../../assets/img/logo-hero.webp'
 import { useNavigate } from 'react-router-dom'
 
-function Hero() {
+export function Hero() {
 	const navigate = useNavigate()
 
 	function handleVideoClick() {
@@ -144,4 +144,3 @@ function Hero() {
 	)
 }
 
-export default Hero
