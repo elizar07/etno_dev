@@ -6,7 +6,7 @@ const Loading = () => {
 		<div id='load'>
 			<div className='container'>
 				<div className='load'>
-					<Riple color='#b5bef3' size='medium' style={{fontSize:50,marginBottom:280,marginTop:100,display:'flex',justifyContent:"center",alignItems:"center"}} textColor='#dd3737' />
+					<Riple color='#b5bef4' size='medium' style={{fontSize:50,marginBottom:270,marginTop:100,display:'flex',justifyContent:"center",alignItems:"center"}} textColor='#dd3737' />
 				</div>
 			</div>
 		</div>
