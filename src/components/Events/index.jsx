@@ -2,10 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import EventList from '../MainLists/eventList'
 import useFetch from '../../hooks/useFetch'
+import { API } from '../../API'
 
 export function Events() {
-	const events_url = 'http://3.38.98.134/events'
-	const { data, loading } = useFetch({ url: events_url })
+	const { data, loading } = useFetch({ url: `${API}events` })
+
 
 	if (loading) {
 		return <div>Loading</div>

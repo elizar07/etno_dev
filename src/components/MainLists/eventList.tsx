@@ -46,7 +46,7 @@ const formattedMinutes = minutes.toString().padStart(2, '0');
 									<h2>{organization_name}</h2>
 								</div>
 								<div className='events--foto__text--par__kor2'>
-									<h6>Когда</h6>
+									<h6>Локация</h6>
 									<h2>{location}</h2>
 								</div>
 							</div>
