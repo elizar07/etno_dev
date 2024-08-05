@@ -1,7 +1,12 @@
 import React from 'react'
+import useFetch from '../../hooks/useFetch'
 
-const DetailPagesVacancies = () => {
-	
+export const DetailPagesVacancies = () => {
+	  const { data, loading } = useFetch()
+
+		if (loading) {
+			return <div>loading....</div>
+		}
 	return (
 		<div id='position'>
 			<div className='container'>
@@ -116,4 +121,3 @@ const DetailPagesVacancies = () => {
 	)
 }
 
-export default DetailPagesVacancies

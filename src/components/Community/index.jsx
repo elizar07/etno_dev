@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaTelegramPlane } from 'react-icons/fa'
 
-const Community = () => {
+export const Community = () => {
 	return (
 		<div id='community'>
 			<div className='container'>
@@ -53,5 +53,4 @@ const Community = () => {
 	)
 }
 
-export default Community
 
