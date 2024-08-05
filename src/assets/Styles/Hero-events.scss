@@ -1,23 +1,4 @@
-#events {
-	.btn1 {
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-end;
-		button {
-			margin-bottom: 50px;
-			background: #6fcf97;
-			color: #fff;
-			border: none;
-			font-weight: 700;
-			font-size: 14px;
-			width: 200px;
-			height: 38px;
 
-			letter-spacing: 0.03em;
-
-			outline: none;
-		}
-	}
 	.btn2 {
 		display: flex;
 		justify-content: center;
@@ -103,5 +84,5 @@
 				}
 			}
 		}
-	}
+	
 }

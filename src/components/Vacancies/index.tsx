@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import VacancyList from '../MainLists/vacancyList'
+import Loading from '../../ui/Loading'
 
 export const Vacancies = () => {
 	const navigate = useNavigate()
@@ -9,8 +10,9 @@ export const Vacancies = () => {
 		navigate('/detailPagesVacancies')
 	}
 if(loading){
-	return <div>loading....</div>
+	return <div><Loading/></div>
 }
+
 	return (
 		<div id='vacancies'>
 			<div className='container'>

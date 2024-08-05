@@ -2,17 +2,16 @@ import VideoList from '../MainLists/videoList'
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
 import { VideoTypes } from '../../types/video'
+import Loading from '../../ui/Loading'
 
 export const Video = () => {
 	const { data, loading } = useFetch({ url: `${API}meetups` })
 
 	if (loading) {
-		return <div>loading....</div>
+		return <div><Loading/></div>
 	}
 
-	if (!data || data.length === 0) {
-		return <div>Нет доступных видео</div>
-	}
+
 
 	return (
 		<div id='video'>

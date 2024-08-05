@@ -1,30 +1,34 @@
-import logo from '../../assets/img/logo.jpg'
-import logoHero from '../../assets/img/logo-hero.webp'
 import { useNavigate } from 'react-router-dom'
-import EventList from '../MainLists/eventList'
-import useFetch from '../../hooks/useFetch'
 import { API } from '../../API'
+import useFetch from '../../hooks/useFetch'
+import EventList from '../MainLists/eventList'
 import VacancyList from '../MainLists/vacancyList'
 import VideoList from '../MainLists/videoList'
-
+import Loading from '../../ui/Loading'
 export function Hero() {
-	const { data, loading } = useFetch({ url: `${API}events`})
-
-
-
+	const { data, loading } = useFetch({ url: `${API}events` })
+	const { data: jobsData, loading: loadingJobs } = useFetch({
+		url: `${API}jobs`
+	})
+	const { data: meetupsData, loading: loadingMeetups } = useFetch({
+		url: `${API}meetups`
+	})
 
 	const navigate = useNavigate()
 
 	function handleVideoClick() {
 		navigate('/video')
 	}
-	function handleVacanciesClick (){
+	function handleVacanciesClick() {
 		navigate('/vacancies')
 	}
-	function handleEventClick (){
+	function handleEventClick() {
 		navigate('/events')
 	}
-
+	if (loading) {
+		return <div><Loading/></div>
+	}
+	
 	return (
 		<div id='hero'>
 			<div className='container'>
@@ -49,8 +53,8 @@ export function Hero() {
 					<div className='heros-title'>
 						<h2 onClick={handleVacanciesClick}>Последние вакансии</h2>
 					</div>
-					{data &&
-						data.slice(0,2).map((job, index) => {
+					{jobsData &&
+						jobsData.slice(0, 2).map((job, index) => {
 							return (
 								<VacancyList
 									key={index}
@@ -70,7 +74,7 @@ export function Hero() {
 					<h1 onClick={handleVideoClick}>Последнее видео</h1>
 				</div>
 				<div className='video-block'>
-					{data.slice(0,2).map(el => (
+					{meetupsData.slice(0, 2).map(el => (
 						<VideoList
 							key={el.id}
 							title={el.title}
@@ -84,4 +88,3 @@ export function Hero() {
 		</div>
 	)
 }
-

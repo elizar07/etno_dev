@@ -98,13 +98,12 @@ margin-left: 40px;
 .first__block-organizer {
 	position: absolute;
 	z-index: 10;
-	width: 570px;
-	height: 355px;
+    width: 530px;
+    height: 50px;
 	top: 270px;
 	left: 10px;
 	color: white;
 	margin-left: 30px;
-
 }
 .first__block-data {
 	position: absolute;
@@ -119,7 +118,6 @@ margin-left: 40px;
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 30px;
-		// margin-left: -150px;
 
 		&--foto {
 			position: relative;
