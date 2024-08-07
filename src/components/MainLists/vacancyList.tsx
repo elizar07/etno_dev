@@ -12,13 +12,13 @@ const VacancyList = ({
 }:IVacancyType) => {
 	const navigate = useNavigate()
 
-	function DetailPages() {
+	function DetailPagesVacancies() {
 		navigate('/detailPagesVacancies')
 	}
 
 	return (
 		<div>
-			<div className='jobs-content' onClick={DetailPages}>
+			<div className='jobs-content' onClick={DetailPagesVacancies}>
 				<img
 					src='https://devkg.com/images/organizations/c0814e899a66d41ede3aad818e921946.png'
 					alt='img'
