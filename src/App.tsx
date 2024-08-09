@@ -1,9 +1,20 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 
-import {Header,Footer,Hero,Community,Vacancies,Events,Video,Organizations,} from './components/index'
-import { DetailPagesVacancies } from './components/DetailPagesVacancies'
 import DetailPageorganization from './components/DetailPagesOrganization'
+import { DetailPagesVacancies } from './components/DetailPagesVacancies'
+import {
+	Community,
+	Events,
+	Footer,
+	Header,
+	Hero,
+	Organizations,
+	Vacancies,
+	Video,
+	Admin
+
+} from './components/index'
 
 function App() {
 	return (
@@ -22,8 +33,9 @@ function App() {
 				/>
 				<Route
 					path='/detailPagesOrganization'
-					element={<DetailPageorganization/>}
+					element={<DetailPageorganization />}
 				/>
+				<Route path='admin' element={<Admin/>}/>
 			</Routes>
 			<Footer />
 		</div>
