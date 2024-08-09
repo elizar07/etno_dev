@@ -74,24 +74,23 @@ export function Header() {
 						</div>
 						<div
 							style={{
-								display: modal ? 'block' : 'none',
+								display: modal ? 'block' : 'none'
 							}}
-						>
-						</div>
-						<div className='header__enter'
-						//  onClick={(e)=>setHeaderUser(true)}
-						 >
+						></div>
+						<div className='header__enter'>
 							{modal ? (
 								<button onClick={closeModal} className='products'>
 									close
 								</button>
 							) : (
-								<button onClick={openModal} className='products'>
-									<span>
-										<SlArrowRightCircle />
-									</span>
-									Войти
-								</button>
+								<Link to='/admin' >
+									<button onClick={openModal} className='products'>
+										<span>
+											<SlArrowRightCircle />
+										</span>
+										Войти
+									</button>
+								</Link>
 							)}
 						</div>
 						<div className='header__enter__two'>
@@ -110,10 +109,6 @@ export function Header() {
 					</div>
 				</div>
 			</div>
-			{/* <div className="header-user-bg" onClick={(e)=> setHeaderUser(false)}></div>
-			<div className="header-user">
-
-			</div> */}
 		</div>
 	)
 }
