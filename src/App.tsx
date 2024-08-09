@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 
-import {Header,Footer,Hero,Community,Vacancies,Events,Video,Organizations,DetailPagesVacancies,} from './components/index'
+import {Header,Footer,Hero,Community,Vacancies,Events,Video,Organizations,} from './components/index'
+import { DetailPagesVacancies } from './components/DetailPagesVacancies'
+import DetailPageorganization from './components/DetailPagesOrganization'
 
 function App() {
 	return (
@@ -17,6 +19,10 @@ function App() {
 				<Route
 					path='/detailPagesVacancies'
 					element={<DetailPagesVacancies />}
+				/>
+				<Route
+					path='/detailPagesOrganization'
+					element={<DetailPageorganization/>}
 				/>
 			</Routes>
 			<Footer />

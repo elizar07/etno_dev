@@ -1,17 +1,13 @@
 
 import { Link } from 'react-router-dom'
+import { EventTypes } from '../../types/events'
 
 const EventList = (
 	{  location = "",
   name = "",
   organization_name = "",
   date = "",
-}: {
-  location: string;
-  name: string;
-  organization_name: string;
-  date: string;
-}) => {
+}:EventTypes) => {
   const date1 = new Date(date);
 
   const year = date1.getFullYear();
