@@ -46,6 +46,7 @@ export function Hero() {
 									name={el.name}
 									organization_name={el.organization_name}
 									date={el.date}
+									cover={el.cover}
 								/>
 							))}{' '}
 				</div>

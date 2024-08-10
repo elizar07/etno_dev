@@ -12,22 +12,21 @@ export function Events() {
 	if (loading) {
 		return <div><Loading/></div>
 	}
-	
-
 	return (
 		<div id='events'>
 			<div className='container'>
 				<div className='btn1'>
 					<button>Добавить мероприятие</button>
 				</div>
-				{data &&
-					data.map((el, index) => (
+				{
+					data.map((el) => (
 						<EventList
-							key={index}
+							key={el.id}
 							location={el.location}
 							name={el.name}
 							organization_name={el.organization_name}
 							date={el.date}
+							cover={el.cover}
 						/>
 					))}
 				<div className='btn2'>
