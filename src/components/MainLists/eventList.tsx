@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import { EventTypes } from '../../types/events'
 
 const EventList = (
-	{  location = "",
-  name = "",
-  organization_name = "",
-  date = "",
+	{  location,
+  name,
+  organization_name,
+  date,
+	cover
 }:EventTypes) => {
   const date1 = new Date(date);
 
@@ -23,10 +24,18 @@ const formattedMinutes = minutes.toString().padStart(2, '0');
 			<Link to={'/eventDetals'}>
 				<div className='events'>
 					<div className='events--foto'>
+						{cover === null ? (
+							<img
+								src='https://img.freepik.com/premium-photo/a-beautiful-mountain-view_1181113-26.jpg'
+								alt='img'
+							/>
+						) : (
+		
 						<img
-							src='https://devkg.com/images/events/e975ab09a375897590241aaec11d51fa.png'
+							src={`${cover}`}
 							data-v-17b3db24='img'
 						/>
+						)}
 						<div className='events--foto__text'>
 							<h4>
 								{day} {month} {year}{' '}
