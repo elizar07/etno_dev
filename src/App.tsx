@@ -7,22 +7,29 @@ import {
 	Community,
 	Events,
 	Footer,
-	Header,
 	Hero,
 	Organizations,
 	Vacancies,
 	Video,
-	Admin
-
+	Admin,
+	Header
 } from './components/index'
+import RouterProtector from './components/RouterProtect'
 
 function App() {
 	return (
 		<div className=''>
-			<Header />
+			<Header/>
 			<Routes>
 				<Route path='/' element={<Hero />} />
-				<Route path='/vacancies' element={<Vacancies />} />
+				<Route
+					path='/vacancies'
+					element={
+						<RouterProtector>
+							<Vacancies />
+						</RouterProtector>
+					}
+				/>
 				<Route path='/events' element={<Events />} />
 				<Route path='/video' element={<Video />} />
 				<Route path='/organizations' element={<Organizations />} />
@@ -35,7 +42,7 @@ function App() {
 					path='/detailPagesOrganization'
 					element={<DetailPageorganization />}
 				/>
-				<Route path='admin' element={<Admin/>}/>
+				<Route path='admin' element={<Admin />} />
 			</Routes>
 			<Footer />
 		</div>
