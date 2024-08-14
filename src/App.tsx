@@ -7,20 +7,19 @@ import {
 	Community,
 	Events,
 	Footer,
-	Header,
 	Hero,
 	Organizations,
 	Vacancies,
 	Video,
-	Admin
-
+	Admin,
+	Header
 } from './components/index'
 import RouterProtector from './components/RouterProtect'
 
 function App() {
 	return (
 		<div className=''>
-			<Header />
+			<Header/>
 			<Routes>
 				<Route path='/' element={<Hero />} />
 				<Route
