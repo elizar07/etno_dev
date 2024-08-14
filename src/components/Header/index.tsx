@@ -23,9 +23,7 @@ export function Header() {
 		setIsLoggedIn(false)
 	}
 
-	useEffect(() => {
-		logout()
-  },[])
+
 
 	return (
 		<div className='header'>
@@ -35,7 +33,7 @@ export function Header() {
 						<img
 							onClick={logoHeader}
 							src='https://devkg.com/js/img/logo.458f2cd.svg'
-							alt=''
+							alt='img'
 						/>
 					</div>
 

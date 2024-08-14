@@ -15,10 +15,10 @@ export const useAuth = (
 			})
 			return res.data
 		} catch (error: any) {
-			console.log(error)
+			console.log('error', error)
 			return {
 				success: false,
-				message: error?.message || 'Something went wrong'
+				message: error.response.data.message || 'Something went wrong'
 			}
 		}
 	}
