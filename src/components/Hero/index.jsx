@@ -1,17 +1,17 @@
 import { useNavigate } from 'react-router-dom'
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
+import Loading from '../../ui/Loading'
 import EventList from '../MainLists/eventList'
 import VacancyList from '../MainLists/vacancyList'
 import VideoList from '../MainLists/videoList'
-import Loading from '../../ui/Loading'
 export function Hero() {
-	const { data, loading } = useFetch({ url: `${API}events` })
+	const { data, loading } = useFetch({ url: `${API}/events` })
 	const { data: jobsData, loading: loadingJobs } = useFetch({
-		url: `${API}jobs`
+		url: `${API}/jobs`
 	})
 	const { data: meetupsData, loading: loadingMeetups } = useFetch({
-		url: `${API}meetups`
+		url: `${API}/meetups`
 	})
 
 	const navigate = useNavigate()
@@ -26,9 +26,13 @@ export function Hero() {
 		navigate('/events')
 	}
 	if (loading) {
-		return <div><Loading/></div>
+		return (
+			<div>
+				<Loading />
+			</div>
+		)
 	}
-	
+
 	return (
 		<div id='hero'>
 			<div className='container'>

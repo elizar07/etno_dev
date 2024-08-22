@@ -4,22 +4,22 @@ import './App.scss'
 import DetailPageorganization from './components/DetailPagesOrganization'
 import { DetailPagesVacancies } from './components/DetailPagesVacancies'
 import {
+	Admin,
 	Community,
 	Events,
 	Footer,
+	Header,
 	Hero,
 	Organizations,
 	Vacancies,
-	Video,
-	Admin,
-	Header
+	Video
 } from './components/index'
 import RouterProtector from './components/RouterProtect'
 
 function App() {
 	return (
 		<div className=''>
-			<Header/>
+			<Header />
 			<Routes>
 				<Route path='/' element={<Hero />} />
 				<Route

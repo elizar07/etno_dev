@@ -1,17 +1,18 @@
-import VideoList from '../MainLists/videoList'
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
-import { VideoTypes } from '../../types/video'
 import Loading from '../../ui/Loading'
+import VideoList from '../MainLists/videoList'
 
 export const Video = () => {
-	const { data, loading } = useFetch({ url: `${API}meetups` })
+	const { data, loading } = useFetch({ url: `${API}/meetups` })
 
 	if (loading) {
-		return <div><Loading/></div>
+		return (
+			<div>
+				<Loading />
+			</div>
+		)
 	}
-
-
 
 	return (
 		<div id='video'>
@@ -24,7 +25,7 @@ export const Video = () => {
 						<h1>Все видео</h1>
 					</div>
 					<div className='video-block'>
-						{data.map((el) => (
+						{data.map(el => (
 							<VideoList
 								key={el.id}
 								title={el.title}

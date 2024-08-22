@@ -6,7 +6,7 @@ import { API } from '../../API'
 import Loading from '../../ui/Loading'
 
 export function Events() {
-	const { data, loading } = useFetch({ url: `${API}events` })
+	const { data, loading } = useFetch({ url: `${API}/events` })
 
 
 	if (loading) {

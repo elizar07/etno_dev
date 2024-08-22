@@ -1,15 +1,14 @@
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
-import VacancyList from '../MainLists/vacancyList'
 
 const DetailPagesOrganization = () => {
-		const { data, loading } = useFetch({ url: `${API}events` })
-		const { data: jobsData, loading: loadingJobs } = useFetch({
-			url: `${API}jobs`
-		})
-		const { data: meetupsData, loading: loadingMeetups } = useFetch({
-			url: `${API}meetups`
-		})
+	const { data, loading } = useFetch({ url: `${API}/events` })
+	const { data: jobsData, loading: loadingJobs } = useFetch({
+		url: `${API}/jobs`
+	})
+	const { data: meetupsData, loading: loadingMeetups } = useFetch({
+		url: `${API}/meetups`
+	})
 
 	return (
 		<>
