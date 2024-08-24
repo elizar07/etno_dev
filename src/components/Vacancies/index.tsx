@@ -9,6 +9,9 @@ export const Vacancies = () => {
 	function DetailPages() {
 		navigate('/detailPagesVacancies')
 	}
+		function AddVacan() {
+			navigate('/addVacan')
+		}
 if(loading){
 	return <div><Loading/></div>
 }
@@ -17,7 +20,7 @@ if(loading){
 		<div id='vacancies'>
 			<div className='container'>
 				<div className='vacancies'>
-					<button className='add-vacancies'>Добавить вакансию</button>
+					<button className='add-vacancies' onClick={AddVacan}>Добавить вакансию</button>
 					<div className='jobs-contents'>
 						{data &&
 							data.map((job: any, index: number) => {

@@ -15,6 +15,7 @@ import {
 	Video
 } from './components/index'
 import RouterProtector from './components/RouterProtect'
+import AddVacan from './components/AddVacan'
 
 function App() {
 	return (
@@ -43,6 +44,7 @@ function App() {
 					element={<DetailPageorganization />}
 				/>
 				<Route path='admin' element={<Admin />} />
+				<Route path='/addVacan' element={<AddVacan/>}/>
 			</Routes>
 			<Footer />
 		</div>
