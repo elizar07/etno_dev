@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { API } from '../../API'
@@ -7,43 +8,43 @@ import useFetch from '../../hooks/useFetch'
 import Loading from '../../ui/Loading'
 
 const AddVacan = () => {
-	const [nameCompany, setNameCompany] = useState('')
-	const [JobTitle, setJobTitle] = useState('')
-	const [salary, setSalary] = useState('')
-	const [priceTo, setPriceTo] = useState('')
-	const [priceFrom, setPriceFrom] = useState('')
-	const [typeVacancies, setTypeVacancies] = useState('')
-	const [address, setAddress] = useState('')
-	const [phone, setPhone] = useState('')
-	const [email, setEmail] = useState('')
+	const navigate = useNavigate()
 	const { data, loading } = useFetch()
+	const [eventState, setEventState] = useState({
+		nameCompany: '',
+		JobTitle: '',
+		salary: '',
+		priceTo: '',
+		priceFrom: '',
+		typeVacancies: '',
+		address: '',
+		phone: '',
+		email: ''
+	})
 
-	const successfuly = () =>
-		toast.success('Отправлено', {
-			position: 'top-center',
-			autoClose: 2000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-			theme: 'dark'
+	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = e.target
+		setEventState({
+			...eventState,
+			[name]: value
 		})
+	}
 
-	const error = () =>
-		toast.error('Заполните все поля', {
-			position: 'top-center',
-			autoClose: 2000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-			theme: 'dark'
-		})
 
 	const handleAddVacancy = async (e: React.FormEvent) => {
 		e.preventDefault()
+
+		const {
+			nameCompany,
+			JobTitle,
+			salary,
+			priceFrom,
+			priceTo,
+			typeVacancies,
+			address,
+			phone,
+			email
+		} = eventState
 
 		if (
 			!nameCompany ||
@@ -56,7 +57,7 @@ const AddVacan = () => {
 			!phone ||
 			!email
 		) {
-			error()
+			toast.error('Заполните все поля')
 			return
 		}
 
@@ -83,29 +84,33 @@ const AddVacan = () => {
 			})
 
 			if (response.data.success) {
-				successfuly()
-				setNameCompany('')
-				setJobTitle('')
-				setSalary('')
-				setTypeVacancies('')
-				setPriceFrom('')
-				setPriceTo('')
-				setAddress('')
-				setPhone('')
-				setEmail('')
+				toast.success('Вакансия успешно добавлена')
+
+				setTimeout(() => {
+					navigate('/Vacancies') 
+				}, 2000) 
+
+				setEventState({
+					nameCompany: '',
+					JobTitle: '',
+					salary: '',
+					priceTo: '',
+					priceFrom: '',
+					typeVacancies: '',
+					address: '',
+					phone: '',
+					email: ''
+				})
 			}
 		} catch (error) {
-			console.error('error', error)
-			alert('Не удалось добавить вакансию')
+			console.error(Response.error)
+			toast.error('Не удалось добавить вакансию')
 		}
 	}
 
+
 	if (loading) {
-		return (
-			<div>
-				<Loading />
-			</div>
-		)
+		return <Loading />
 	}
 
 	return (
@@ -115,57 +120,66 @@ const AddVacan = () => {
 					<h1>Добавить вакансию</h1>
 					<div className='addvacan-inputs'>
 						<input
+							name='nameCompany'
 							placeholder='название компании'
-							onChange={e => setNameCompany(e.target.value)}
-							value={nameCompany}
+							onChange={inputChangeHandler}
+							value={eventState.nameCompany}
 							type='text'
 						/>
 						<input
+							name='JobTitle'
 							placeholder='Должность'
-							onChange={e => setJobTitle(e.target.value)}
-							value={JobTitle}
+							onChange={inputChangeHandler}
+							value={eventState.JobTitle}
 							type='text'
 						/>
 						<input
+							name='salary'
 							placeholder='неделя & месяц & неоплачиваемый'
-							onChange={e => setSalary(e.target.value)}
-							value={salary}
+							onChange={inputChangeHandler}
+							value={eventState.salary}
 							type='text'
 						/>
 						<input
+							name='priceFrom'
 							placeholder='Price from'
-							onChange={e => setPriceFrom(e.target.value)}
-							value={priceFrom}
+							onChange={inputChangeHandler}
+							value={eventState.priceFrom}
 							type='text'
 						/>
 						<input
+							name='priceTo'
 							placeholder='Price to'
-							onChange={e => setPriceTo(e.target.value)}
-							value={priceTo}
+							onChange={inputChangeHandler}
+							value={eventState.priceTo}
 							type='text'
 						/>
 						<input
+							name='typeVacancies'
 							placeholder='Офис & Стажировка & Удаленка'
-							onChange={e => setTypeVacancies(e.target.value)}
-							value={typeVacancies}
+							onChange={inputChangeHandler}
+							value={eventState.typeVacancies}
 							type='text'
 						/>
 						<input
+							name='phone'
 							placeholder='телефон номер'
-							onChange={e => setPhone(e.target.value)}
-							value={phone}
+							onChange={inputChangeHandler}
+							value={eventState.phone}
 							type='text'
 						/>
 						<input
+							name='email'
 							placeholder='Email..'
-							onChange={e => setEmail(e.target.value)}
-							value={email}
+							onChange={inputChangeHandler}
+							value={eventState.email}
 							type='text'
 						/>
 						<input
+							name='address'
 							placeholder='Адрес'
-							onChange={e => setAddress(e.target.value)}
-							value={address}
+							onChange={inputChangeHandler}
+							value={eventState.address}
 							type='text'
 						/>
 					</div>

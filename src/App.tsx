@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 
+import AddVacan from './components/AddVacan'
 import DetailPageorganization from './components/DetailPagesOrganization'
 import { DetailPagesVacancies } from './components/DetailPagesVacancies'
 import {
@@ -15,7 +16,6 @@ import {
 	Video
 } from './components/index'
 import RouterProtector from './components/RouterProtect'
-import AddVacan from './components/AddVacan'
 
 function App() {
 	return (
@@ -23,14 +23,7 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path='/' element={<Hero />} />
-				<Route
-					path='/vacancies'
-					element={
-						<RouterProtector>
-							<Vacancies />
-						</RouterProtector>
-					}
-				/>
+				<Route path='/vacancies' element={<Vacancies />} />
 				<Route path='/events' element={<Events />} />
 				<Route path='/video' element={<Video />} />
 				<Route path='/organizations' element={<Organizations />} />
@@ -44,7 +37,14 @@ function App() {
 					element={<DetailPageorganization />}
 				/>
 				<Route path='admin' element={<Admin />} />
-				<Route path='/addVacan' element={<AddVacan/>}/>
+				<Route
+					path='/addVacan'
+					element={
+						<RouterProtector>
+							<AddVacan />
+						</RouterProtector>
+					}
+				/>
 			</Routes>
 			<Footer />
 		</div>
