@@ -8,7 +8,8 @@ const VacancyList = ({
 	type = '',
 	city = '',
 	currency = '',
-	salary = ''
+	salary = '',
+	organization_icon = ''
 }:IVacancyType) => {
 	const navigate = useNavigate()
 
@@ -20,7 +21,7 @@ const VacancyList = ({
 		<div>
 			<div className='jobs-content' onClick={DetailPagesVacancies}>
 				<img
-					src='https://devkg.com/images/organizations/c0814e899a66d41ede3aad818e921946.png'
+					src={organization_icon}
 					alt='img'
 					style={{ width: '30px', height: '30px' }}
 				/>

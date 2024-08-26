@@ -9,7 +9,7 @@ import Loading from '../../ui/Loading'
 
 const AddVacan = () => {
 	const navigate = useNavigate()
-	const { data, loading } = useFetch()
+	const {loading } = useFetch()
 	const [eventState, setEventState] = useState({
 		nameCompany: '',
 		JobTitle: '',
@@ -19,7 +19,8 @@ const AddVacan = () => {
 		typeVacancies: '',
 		address: '',
 		phone: '',
-		email: ''
+		email: '',
+		organization_icon:''
 	})
 
 	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,7 +44,8 @@ const AddVacan = () => {
 			typeVacancies,
 			address,
 			phone,
-			email
+			email,
+			organization_icon
 		} = eventState
 
 		if (
@@ -55,7 +57,8 @@ const AddVacan = () => {
 			!priceTo ||
 			!address ||
 			!phone ||
-			!email
+			!email ||
+			!organization_icon
 		) {
 			toast.error('Заполните все поля')
 			return
@@ -79,7 +82,7 @@ const AddVacan = () => {
 				is_archived: true,
 				gradient: 0,
 				workday: '',
-				organization_icon: '',
+				organization_icon: organization_icon,
 				organization_icon_formats: [null]
 			})
 
@@ -99,7 +102,8 @@ const AddVacan = () => {
 					typeVacancies: '',
 					address: '',
 					phone: '',
-					email: ''
+					email: '',
+					organization_icon:''
 				})
 			}
 		} catch (error) {
@@ -112,7 +116,6 @@ const AddVacan = () => {
 	if (loading) {
 		return <Loading />
 	}
-
 	return (
 		<div id='addvacan'>
 			<div className='container'>
@@ -180,6 +183,13 @@ const AddVacan = () => {
 							placeholder='Адрес'
 							onChange={inputChangeHandler}
 							value={eventState.address}
+							type='text'
+						/>
+						<input
+							name='organization_icon'
+							placeholder='Url logo...'
+							onChange={inputChangeHandler}
+							value={eventState.organization_icon}
 							type='text'
 						/>
 					</div>

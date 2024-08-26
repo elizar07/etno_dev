@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import EventList from '../MainLists/eventList'
 import useFetch from '../../hooks/useFetch'
 import { API } from '../../API'
@@ -7,8 +7,11 @@ import Loading from '../../ui/Loading'
 
 export function Events() {
 	const { data, loading } = useFetch({ url: `${API}/events` })
+const navigate = useNavigate()
 
-
+function addEvent (){
+	navigate('/addEvent')
+}
 	if (loading) {
 		return <div><Loading/></div>
 	}
@@ -16,7 +19,7 @@ export function Events() {
 		<div id='events'>
 			<div className='container'>
 				<div className='btn1'>
-					<button>Добавить мероприятие</button>
+					<button onClick={addEvent}>Добавить мероприятие</button>
 				</div>
 				{
 					data.map((el) => (

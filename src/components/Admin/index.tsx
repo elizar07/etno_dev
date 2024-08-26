@@ -3,6 +3,8 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks'
 import { LoginResponse } from '../../types/login'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const loginApi = 'http://3.38.98.134/auth/login'
 const signupApi = 'http://3.38.98.134/auth/signup'
@@ -19,11 +21,15 @@ export function Admin() {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 		if (!userName || !password) {
-			alert('Please, fill the  fields!')
+			toast.info('Пожалуйста, заполните поля !', {
+				autoClose: 2000
+			})
 			return
 		}
 		if (!isLoginTab && password !== confirm) {
-			alert('Password do not match')
+			toast.error('Пароль не совпадает',{
+				autoClose:2000
+			})
 			return
 		}
 		const res: LoginResponse = await login(userName, password)
@@ -31,7 +37,8 @@ export function Admin() {
 			Cookies.set('authtoken', res.token)
 			nav('/')
 		} else {
-			alert(res.message)
+			toast.error(res.message)
+			
 		}
 	}
 
@@ -95,6 +102,7 @@ export function Admin() {
 					)}
 				</div>
 			</div>
+			<ToastContainer />
 		</div>
 	)
 }
