@@ -24,7 +24,7 @@ const formattedMinutes = minutes.toString().padStart(2, '0');
 			<Link to={'/eventDetals'}>
 				<div className='events'>
 					<div className='events--foto'>
-						{cover === null ? (
+						{cover === null ||'' ? (
 							<img
 								src='https://img.freepik.com/premium-photo/a-beautiful-mountain-view_1181113-26.jpg'
 								alt='img'

@@ -1,0 +1,36 @@
+.addevent-inputs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+.addevent-inputs input {
+	width: 300px;
+	height: 50px;
+	padding-left: 10px;
+}
+.addevent button {
+	width: 200px;
+	height: 50px;
+	background: #6fcf97;
+	transition: 0.2s;
+	font-weight: 700;
+	font-size: 14px;
+	color: white;
+	margin-top: 30px;
+}
+.addevent button:hover {
+	background: #97d1af;
+	transition: 0.2s;
+}
+.addevent{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.addevent h1{
+	margin-bottom: 30px;
+}

@@ -16,6 +16,7 @@ import {
 	Video
 } from './components/index'
 import RouterProtector from './components/RouterProtect'
+import AddEvent from './components/AddEvent'
 
 function App() {
 	return (
@@ -42,6 +43,14 @@ function App() {
 					element={
 						<RouterProtector>
 							<AddVacan />
+						</RouterProtector>
+					}
+				/>
+				<Route
+					path='/addEvent'
+					element={
+						<RouterProtector>
+							<AddEvent />
 						</RouterProtector>
 					}
 				/>
