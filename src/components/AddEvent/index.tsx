@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
@@ -74,14 +74,11 @@ const AddEvent = () => {
 					cover: ''
 				})
 			}
-		} catch (error) {
-			if (axios.isAxiosError(error) && error.response) {
-				const backendMessage = error.response.data.message || 'Ошибка сервера'
-				toast.error(`Не удалось добавить: ${backendMessage}`)
-			} else {
-				toast.error('Не удалось добавить: неизвестная ошибка')
-			}
-			console.log(error)
+		} catch (error: any) {
+			console.error(error)
+			toast.error(
+				error.response.data.message || 'Не удалось добавить мероприятие'
+			)
 		}
 	}
 	if (loading) {

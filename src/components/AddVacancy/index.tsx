@@ -9,7 +9,7 @@ import Loading from '../../ui/Loading'
 
 const AddVacancy = () => {
 	const navigate = useNavigate()
-	const {loading } = useFetch()
+	const { loading } = useFetch()
 	const [eventState, setEventState] = useState({
 		nameCompany: '',
 		JobTitle: '',
@@ -20,7 +20,7 @@ const AddVacancy = () => {
 		address: '',
 		phone: '',
 		email: '',
-		organization_icon:''
+		organization_icon: ''
 	})
 
 	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +30,6 @@ const AddVacancy = () => {
 			[name]: value
 		})
 	}
-
 
 	const handleAddVacancy = async (e: React.FormEvent) => {
 		e.preventDefault()
@@ -90,8 +89,8 @@ const AddVacancy = () => {
 				toast.success('Вакансия успешно добавлена')
 
 				setTimeout(() => {
-					navigate('/Vacancies') 
-				}, 2000) 
+					navigate('/Vacancies')
+				}, 2000)
 
 				setEventState({
 					nameCompany: '',
@@ -103,15 +102,14 @@ const AddVacancy = () => {
 					address: '',
 					phone: '',
 					email: '',
-					organization_icon:''
+					organization_icon: ''
 				})
 			}
-		} catch (error) {
-			console.error(Response.error)
-			toast.error('Не удалось добавить вакансию')
+		} catch (error: any) {
+			console.error(error)
+			toast.error(error.response.data.message || '')
 		}
 	}
-
 
 	if (loading) {
 		return <Loading />
