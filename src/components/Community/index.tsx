@@ -19,18 +19,6 @@ export const Community = () => {
 			<div className='container'>
 				<div className='community'>
 					<CommunityList data={data} />
-
-					{/* <div className='community--telegram'>
-						<h1>Наши ресурсы в Telegram</h1>
-						<div className='community--telegram__blocks'>
-							<div className='community--telegram__blocks--block'>
-								<span>
-									<FaTelegramPlane />
-								</span>
-								<p>Общий чат</p>
-							</div>
-						</div>
-					</div>{' '} */}
 				</div>
 			</div>
 		</div>

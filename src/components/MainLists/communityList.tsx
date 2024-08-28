@@ -17,7 +17,6 @@ const CommunityList = ({ data }: CommunityListProps) => {
 	const facebook = data?.[0]?.facebook || []
 	const youtube = data?.[0]?.youtube || []
 	const github = data?.[0]?.github || []
-console.log(data);
 
 	return (
 		<>

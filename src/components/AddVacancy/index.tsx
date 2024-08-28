@@ -7,7 +7,7 @@ import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
 import Loading from '../../ui/Loading'
 
-const AddVacan = () => {
+const AddVacancy = () => {
 	const navigate = useNavigate()
 	const {loading } = useFetch()
 	const [eventState, setEventState] = useState({
@@ -201,4 +201,4 @@ const AddVacan = () => {
 	)
 }
 
-export default AddVacan
+export default AddVacancy

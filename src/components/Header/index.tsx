@@ -5,7 +5,7 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { isUserLogeddin } from '../../utils'
 export function Header() {
 	const navigate = useNavigate()
-	function logoHeader() {
+	function navigateTologoHeader() {
 		navigate('/')
 	}
 	const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false)
@@ -31,7 +31,7 @@ export function Header() {
 				<div className='header__content'>
 					<div className='header-logo'>
 						<img
-							onClick={logoHeader}
+							onClick={navigateTologoHeader}
 							src='https://devkg.com/js/img/logo.458f2cd.svg'
 							alt='img'
 						/>

@@ -6,11 +6,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
 import Loading from '../../ui/Loading'
-import { log } from 'console'
 const AddEvent = () => {
 	const navigate = useNavigate()
 	const { loading } = useFetch()
-	
+
 	const [eventState, setEventState] = useState({
 		nameOrganizator: '',
 		temaEvents: '',
@@ -29,13 +28,8 @@ const AddEvent = () => {
 	const handleAddEvent = async (e: React.FormEvent) => {
 		e.preventDefault()
 
-		const {
-			nameOrganizator,
-			temaEvents,
-			placeEvents,
-			timeEvents,
-			cover
-		} = eventState
+		const { nameOrganizator, temaEvents, placeEvents, timeEvents, cover } =
+			eventState
 
 		if (
 			!nameOrganizator ||
@@ -44,7 +38,6 @@ const AddEvent = () => {
 			!timeEvents ||
 			!cover
 		) {
-			
 			toast.error('Заполните все поля')
 			return
 		}
@@ -67,7 +60,7 @@ const AddEvent = () => {
 			})
 
 			if (response.data.success) {
-				toast.success('Вакансия успешно добавлена')
+				toast.success('Мероприятие успешно добавлена')
 
 				setTimeout(() => {
 					navigate('/Events')
@@ -78,12 +71,12 @@ const AddEvent = () => {
 					temaEvents: '',
 					placeEvents: '',
 					timeEvents: '',
-					cover:''
+					cover: ''
 				})
 			}
 		} catch (error) {
-console.error(Response.error)
-			toast.error("не удалось добавить видео")
+			console.error(Response.error)
+			toast.error('не удалось добавить видео')
 		}
 	}
 	if (loading) {

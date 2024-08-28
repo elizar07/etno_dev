@@ -20,11 +20,18 @@ const VacancyList = ({
 	return (
 		<div>
 			<div className='jobs-content' onClick={DetailPagesVacancies}>
-				<img
-					src={organization_icon}
-					alt='img'
-					style={{ width: '30px', height: '30px' }}
-				/>
+				{
+					organization_icon === null ? (
+						<div className="vacancy_preview_img"></div>
+					):(
+
+						<img
+							src={organization_icon}
+							alt='img'
+							style={{ width: '30px', height: '30px' }}
+						/>
+					)
+				}
 				<div className='information'>
 					<div className='jobs-item-field-company'>
 						<h4>

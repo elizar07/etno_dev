@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 
-import AddVacan from './components/AddVacan'
 import DetailPageorganization from './components/DetailPagesOrganization'
 import { DetailPagesVacancies } from './components/DetailPagesVacancies'
 import {
@@ -17,6 +16,7 @@ import {
 } from './components/index'
 import RouterProtector from './components/RouterProtect'
 import AddEvent from './components/AddEvent'
+import AddVacancy from './components/AddVacancy'
 
 function App() {
 	return (
@@ -39,10 +39,10 @@ function App() {
 				/>
 				<Route path='admin' element={<Admin />} />
 				<Route
-					path='/addVacan'
+					path='/addVacancy'
 					element={
 						<RouterProtector>
-							<AddVacan />
+							<AddVacancy/>
 						</RouterProtector>
 					}
 				/>

@@ -9,14 +9,12 @@ export const Vacancies = () => {
 	function DetailPages() {
 		navigate('/detailPagesVacancies')
 	}
-	function AddVacan() {
-		navigate('/addVacan')
+	function navigateToAddVacancy() {
+		navigate('/addVacancy')
 	}
 	if (loading) {
 		return (
-			<div>
 				<Loading />
-			</div>
 		)
 	}
 
@@ -24,7 +22,7 @@ export const Vacancies = () => {
 		<div id='vacancies'>
 			<div className='container'>
 				<div className='vacancies'>
-					<button className='add-vacancies' onClick={AddVacan}>
+					<button className='add-vacancies' onClick={navigateToAddVacancy}>
 						Добавить вакансию
 					</button>
 					<div className='jobs-contents'>
