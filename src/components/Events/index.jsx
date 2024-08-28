@@ -21,17 +21,16 @@ function addEvent (){
 				<div className='btn1'>
 					<button onClick={addEvent}>Добавить мероприятие</button>
 				</div>
-				{
-					data.map((el) => (
-						<EventList
-							key={el.id}
-							location={el.location}
-							name={el.name}
-							organization_name={el.organization_name}
-							date={el.date}
-							cover={el.cover}
-						/>
-					))}
+				{data.map(el => (
+					<EventList
+						key={el.id}
+						location={el.location}
+						name={el.name}
+						organization_name={el.organization_name}
+						date={el.date}
+						cover={el.cover}
+					/>
+				))}
 				<div className='btn2'>
 					<button>Следующая страница</button>
 				</div>
