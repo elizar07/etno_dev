@@ -107,7 +107,7 @@ const AddVacancy = () => {
 			}
 		} catch (error: any) {
 			console.error(error)
-			toast.error(error.response.data.message || '')
+			toast.error(error.response.data.message || 'Не удалось добавить вакансию')
 		}
 	}
 
