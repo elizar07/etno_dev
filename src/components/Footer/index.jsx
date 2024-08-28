@@ -7,14 +7,14 @@ import { useNavigate } from 'react-router-dom'
 export function Footer() {
 	const navigate = useNavigate()
 
-	function logoFooter() {
+	function navigateTologoFooter() {
 		navigate('/')
 		setTimeout(() => {
 			const heroElement = document.getElementById('hero')
 			if (heroElement) {
 				heroElement.scrollIntoView({ behavior: 'smooth' })
 			}
-		}, 300) // Задержка в миллисекундах
+		}, 300)
 	}
 
 	return (
@@ -24,7 +24,7 @@ export function Footer() {
 					<div className='footer__content'>
 						<img
 							className='main-dev-logo'
-							onClick={logoFooter}
+							onClick={navigateTologoFooter}
 							src={footerLogo}
 							alt='Dev KG logo'
 						/>

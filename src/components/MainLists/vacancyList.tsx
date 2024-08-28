@@ -28,7 +28,6 @@ const VacancyList = ({
 						<img
 							src={organization_icon}
 							alt='img'
-							style={{ width: '30px', height: '30px' }}
 						/>
 					)
 				}

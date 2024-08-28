@@ -7,12 +7,9 @@ export const Community = () => {
 	const { data, loading } = useFetch({ url: `${API}/community` })
 	if (loading) {
 		return (
-			<div>
 				<Loading />
-			</div>
 		)
 	}
-	console.log(data)
 
 	return (
 		<div id='community'>

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
@@ -75,8 +75,13 @@ const AddEvent = () => {
 				})
 			}
 		} catch (error) {
-			console.error(Response.error)
-			toast.error('не удалось добавить видео')
+			if (axios.isAxiosError(error) && error.response) {
+				const backendMessage = error.response.data.message || 'Ошибка сервера'
+				toast.error(`Не удалось добавить: ${backendMessage}`)
+			} else {
+				toast.error('Не удалось добавить: неизвестная ошибка')
+			}
+			console.log(error)
 		}
 	}
 	if (loading) {

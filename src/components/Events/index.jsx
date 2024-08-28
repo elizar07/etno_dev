@@ -13,9 +13,7 @@ export function Events() {
 	}
 	if (loading) {
 		return (
-			<div>
 				<Loading />
-			</div>
 		)
 	}
 
