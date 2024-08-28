@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
 import Loading from '../../ui/Loading'
+import { log } from 'console'
 const AddEvent = () => {
 	const navigate = useNavigate()
 	const { loading } = useFetch()
@@ -17,6 +18,7 @@ const AddEvent = () => {
 		timeEvents: '',
 		cover: ''
 	})
+
 	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target
 		setEventState({

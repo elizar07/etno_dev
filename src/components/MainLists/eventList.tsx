@@ -7,18 +7,16 @@ const EventList = ({
 	organization_name,
 	date,
 	cover
-}: EventTypes) => {
-	const date1 = new Date(date)
-	console.log(cover);
-	
+}:EventTypes) => {
+  const date1 = new Date(date);
 
-	const year = date1.getFullYear()
-	const month = date1.toLocaleString('default', { month: 'long' })
-	const day = date1.getDate()
-	const hours = date1.getHours()
-	const minutes = date1.getMinutes()
-	const formattedHours = hours.toString().padStart(2, '0')
-	const formattedMinutes = minutes.toString().padStart(2, '0')
+  const year = date1.getFullYear();
+  const month = date1.toLocaleString("default", { month: "long" }); 
+  const day = date1.getDate();
+  const hours = date1.getHours();
+  const minutes = date1.getMinutes();
+  const formattedHours = hours.toString().padStart(2, '0');
+const formattedMinutes = minutes.toString().padStart(2, '0');
 
 	return (
 		<div id='EventList'>
