@@ -29,7 +29,7 @@ function addEvent (){
 							name={el.name}
 							organization_name={el.organization_name}
 							date={el.date}
-							cover={el.cover}
+							cover={el.cover_formats}
 						/>
 					))}
 				<div className='btn2'>

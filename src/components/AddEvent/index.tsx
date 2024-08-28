@@ -9,12 +9,13 @@ import Loading from '../../ui/Loading'
 const AddEvent = () => {
 	const navigate = useNavigate()
 	const { loading } = useFetch()
+	
 	const [eventState, setEventState] = useState({
 		nameOrganizator: '',
 		temaEvents: '',
 		placeEvents: '',
 		timeEvents: '',
-		cover_formats: ''
+		cover: ''
 	})
 	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target
@@ -31,7 +32,7 @@ const AddEvent = () => {
 			temaEvents,
 			placeEvents,
 			timeEvents,
-			cover_formats
+			cover
 		} = eventState
 
 		if (
@@ -39,8 +40,9 @@ const AddEvent = () => {
 			!temaEvents ||
 			!placeEvents ||
 			!timeEvents ||
-			!cover_formats
+			!cover
 		) {
+			
 			toast.error('Заполните все поля')
 			return
 		}
@@ -49,7 +51,7 @@ const AddEvent = () => {
 			const response = await axios.post(`${API}/events`, {
 				id: Math.random(),
 				name: temaEvents,
-				cover: 'string',
+				cover: cover,
 				slug: 'string',
 				location: placeEvents,
 				created_at: 'string',
@@ -59,7 +61,7 @@ const AddEvent = () => {
 				event_type: 'string',
 				button_type: 'string',
 				organization_name: nameOrganizator,
-				cover_formats: cover_formats
+				cover_formats: [null]
 			})
 
 			if (response.data.success) {
@@ -74,12 +76,12 @@ const AddEvent = () => {
 					temaEvents: '',
 					placeEvents: '',
 					timeEvents: '',
-					cover_formats: ''
+					cover:''
 				})
 			}
 		} catch (error) {
-			console.error(error)
-			toast.error('Не удалось добавить вакансию')
+console.error(Response.error)
+			toast.error("не удалось добавить видео")
 		}
 	}
 	if (loading) {
@@ -120,10 +122,10 @@ const AddEvent = () => {
 							type='date'
 						/>
 						<input
-							name='cover_formats'
+							name='cover'
 							placeholder='Url Image'
 							onChange={inputChangeHandler}
-							value={eventState.cover_formats}
+							value={eventState.cover}
 							type='text'
 						/>
 					</div>
