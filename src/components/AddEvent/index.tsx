@@ -6,16 +6,16 @@ import 'react-toastify/dist/ReactToastify.css'
 import { API } from '../../API'
 import useFetch from '../../hooks/useFetch'
 import Loading from '../../ui/Loading'
-import { log } from 'console'
 const AddEvent = () => {
 	const navigate = useNavigate()
 	const { loading } = useFetch()
+
 	const [eventState, setEventState] = useState({
 		nameOrganizator: '',
 		temaEvents: '',
 		placeEvents: '',
 		timeEvents: '',
-		cover_formats: ''
+		cover: ''
 	})
 
 	const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,20 +28,15 @@ const AddEvent = () => {
 	const handleAddEvent = async (e: React.FormEvent) => {
 		e.preventDefault()
 
-		const {
-			nameOrganizator,
-			temaEvents,
-			placeEvents,
-			timeEvents,
-			cover_formats
-		} = eventState
+		const { nameOrganizator, temaEvents, placeEvents, timeEvents, cover } =
+			eventState
 
 		if (
 			!nameOrganizator ||
 			!temaEvents ||
 			!placeEvents ||
 			!timeEvents ||
-			!cover_formats
+			!cover
 		) {
 			toast.error('Заполните все поля')
 			return
@@ -51,7 +46,7 @@ const AddEvent = () => {
 			const response = await axios.post(`${API}/events`, {
 				id: Math.random(),
 				name: temaEvents,
-				cover: cover_formats,
+				cover: cover,
 				slug: 'string',
 				location: placeEvents,
 				created_at: 'string',
@@ -61,11 +56,11 @@ const AddEvent = () => {
 				event_type: 'string',
 				button_type: 'string',
 				organization_name: nameOrganizator,
-				cover_formats: cover_formats
+				cover_formats: [null]
 			})
 
 			if (response.data.success) {
-				toast.success('Вакансия успешно добавлена')
+				toast.success('Мероприятие успешно добавлена')
 
 				setTimeout(() => {
 					navigate('/Events')
@@ -76,12 +71,14 @@ const AddEvent = () => {
 					temaEvents: '',
 					placeEvents: '',
 					timeEvents: '',
-					cover_formats: ''
+					cover: ''
 				})
 			}
-		} catch (error) {
+		} catch (error: any) {
 			console.error(error)
-			toast.error('Не удалось добавить вакансию')
+			toast.error(
+				error.response.data.message || 'Не удалось добавить мероприятие'
+			)
 		}
 	}
 	if (loading) {
@@ -122,10 +119,10 @@ const AddEvent = () => {
 							type='date'
 						/>
 						<input
-							name='cover_formats'
+							name='cover'
 							placeholder='Url Image'
 							onChange={inputChangeHandler}
-							value={eventState.cover_formats}
+							value={eventState.cover}
 							type='text'
 						/>
 					</div>

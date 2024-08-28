@@ -7,12 +7,9 @@ export function Organizations() {
 	const { data, loading } = useFetch({ url: `${API}/organizations` })
 	if (loading) {
 		return (
-			<div>
 				<Loading />
-			</div>
 		)
 	}
-	console.log(data)
 
 	return (
 		<div id='organizations'>

@@ -27,9 +27,7 @@ export function Hero() {
 	}
 	if (loading) {
 		return (
-			<div>
 				<Loading />
-			</div>
 		)
 	}
 

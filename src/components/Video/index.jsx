@@ -8,9 +8,7 @@ export const Video = () => {
 
 	if (loading) {
 		return (
-			<div>
 				<Loading />
-			</div>
 		)
 	}
 
