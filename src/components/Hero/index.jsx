@@ -5,6 +5,7 @@ import Loading from '../../ui/Loading'
 import EventList from '../MainLists/eventList'
 import VacancyList from '../MainLists/vacancyList'
 import VideoList from '../MainLists/videoList'
+import { Vacancies } from '../Vacancies'
 export function Hero() {
 	const { data, loading } = useFetch({ url: `${API}/events` })
 	const { data: jobsData, loading: loadingJobs } = useFetch({
@@ -57,7 +58,7 @@ export function Hero() {
 						<h2 onClick={handleVacanciesClick}>Последние вакансии</h2>
 					</div>
 					{jobsData &&
-						jobsData.slice(0, 2).map((job, index) => {
+						jobsData.slice(0,2).map((job, index) => {
 							return (
 								<VacancyList
 									key={index}
@@ -69,6 +70,7 @@ export function Hero() {
 									city={job.city}
 									currency={job.currency}
 									salary={job.salary}
+									organization_icon={job.organization_icon}
 								/>
 							)
 						})}

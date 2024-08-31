@@ -8,6 +8,7 @@ export function Header() {
 	function navigateTologoHeader() {
 		navigate('/')
 	}
+
 	const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false)
 	const [menu, setMenu] = useState<boolean>(false)
 	const nav = useNavigate()
@@ -22,8 +23,6 @@ export function Header() {
 		Cookies.remove('authtoken')
 		setIsLoggedIn(false)
 	}
-
-
 
 	return (
 		<div className='header'>
@@ -62,7 +61,6 @@ export function Header() {
 								</button>
 							</div>
 						)}
-			
 					</div>
 				</div>
 			</div>

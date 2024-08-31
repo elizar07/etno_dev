@@ -1,107 +1,96 @@
 .footer {
-    background: #000;
-    max-width: 100%;
-    height: 220px;
-    color: white;
-    margin-top: 100px;
+}
+#footer {
+	background: #000;
+	max-width: 100%;
+	height: 220px;
+	color: white;
+	margin-top: 100px;
+	z-index: 100px;
 }
 .main-dev-logo {
-    filter: invert(100%);
-
+	filter: invert(100%);
 }
-.footer__info h1{
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: .03em;
+.footer__info h1 {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0.03em;
 }
-.footer__info{
-padding-top: 40px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 300px;
+.footer__info {
+	padding-top: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 300px;
 }
-.footer__content{
-    padding-top: 30px;
+.footer__content {
+	padding-top: 30px;
 }
 
 .footer__info__icons {
-    display: flex;
-    font-size: 30px;
-    gap: 20px;
-    transition: 0.3s;
-    cursor: pointer;
+	display: flex;
+	font-size: 30px;
+	gap: 20px;
+	transition: 0.3s;
+	cursor: pointer;
 }
-.footer__info__icons a{
-color:  #818896;
+.footer__info__icons a {
+	color: #818896;
 }
-.footer__info__icons-telegram:hover{
-    color: rgb(47, 154, 253);
-    transition: 0.3s;
+.footer__info__icons-telegram:hover {
+	color: rgb(47, 154, 253);
+	transition: 0.3s;
 }
-.footer__info__icons-github:hover{
-    transition: 0.3s;
-color: white;
+.footer__info__icons-github:hover {
+	transition: 0.3s;
+	color: white;
 }
-.footer__info__icons-facebook:hover{
-    transition: 0.3s;
-color: rgb(69, 69, 181);
+.footer__info__icons-facebook:hover {
+	transition: 0.3s;
+	color: rgb(69, 69, 181);
 }
-.footer__info__icons-youtube:hover{
-    transition: 0.3s;
-color: red;
+.footer__info__icons-youtube:hover {
+	transition: 0.3s;
+	color: red;
 }
-
-
-
 
 @media screen and (max-width: 500px) {
-    .footer__info {
-        flex-direction: column;
-    }
-    .footer__info__text p {
-        font-size: 11px;
-    }
-    .footer__content {
-        width: 100%;
-    }
-    
+	.footer__info {
+		flex-direction: column;
+	}
+	.footer__info__text p {
+		font-size: 11px;
+	}
+	.footer__content {
+		width: 100%;
+	}
 }
 @media (max-width: 768px) {
-.footer__info{
-    padding-top: 28px;
- gap: 1px;
-}
-.footer__info h1 {
-    display: flex;
-    flex-wrap: wrap;
-}
+	.footer__info {
+		padding-top: 28px;
+		gap: 1px;
+	}
+	.footer__info h1 {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 @media (max-width: 576px) {
-.footer__info__icons{
-gap: 13px;
-}
+	.footer__info__icons {
+		gap: 13px;
+	}
 }
 @media (max-width: 451px) {
 	.footer__content {
-    padding-top: 13px;
-    margin-right: 10px;
+		padding-top: 13px;
+		margin-right: 10px;
+	}
+	.footer__info__icons {
+		margin-right: 240px;
+		margin-top: 20px;
+	}
+	.footer__info img {
+		display: none;
+	}
 }
-    .footer__info__icons {
-    margin-right: 240px;
-    margin-top: 20px;
-    }
-    .footer__info img{
-        display: none;
-    }
-}
-
-
-
-
-
-
-
-
-

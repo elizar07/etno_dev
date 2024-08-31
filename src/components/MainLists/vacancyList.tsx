@@ -9,7 +9,7 @@ const VacancyList = ({
 	city = '',
 	currency = '',
 	salary = '',
-	organization_icon = ''
+	organization_icon = '',
 }:IVacancyType) => {
 	const navigate = useNavigate()
 

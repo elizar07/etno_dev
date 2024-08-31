@@ -1,0 +1,56 @@
+.MainPagesAdd_content{
+	width: 100%;
+	height: 700px;
+	background: #a15353;
+	margin-top: -9pc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#MainPagesAdd{
+max-width: 100%;
+}
+.PagesAdd_Main_Navigate {
+	width: 225px;
+	height: 100%;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	padding: 23px 34px;
+	background: #fff;
+	   position: fixed;
+    left: 0;
+		top: 0;
+	h1{
+		color: #a7b0c2;
+    transition: 0.3s;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    transition: all 0.2s;
+		margin-top: 24pc;
+	}
+	&_Link {
+		margin-top: 70px;
+display: flex;
+align-items: start;
+gap: 30px;
+flex-direction: column;
+a{
+	color: #a7b0c2;
+    transition: 0.3s;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    transition: all 0.2s;
+}
+	}
+}
+
+// .small{
+// padding-left:290px;
+// .footer__content{
+// 	margin:0 20px 0 20px;
+// }
+// }
+.footer__content{
+	padding-left: 200px;
+}
