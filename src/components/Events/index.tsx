@@ -12,9 +12,7 @@ export function Events() {
 		navigate('/addEvent')
 	}
 	if (loading) {
-		return (
-				<Loading />
-		)
+		return <Loading />
 	}
 
 	return (
@@ -23,16 +21,18 @@ export function Events() {
 				<div className='btn1'>
 					<button onClick={navigateToAddEvent}>Добавить мероприятие</button>
 				</div>
-				{data.map(el => (
-					<EventList
-						key={el.id}
-						location={el.location}
-						name={el.name}
-						organization_name={el.organization_name}
-						date={el.date}
-						cover={el.cover}
-					/>
-				))}
+
+				{data
+					.map((el: any) => (
+						<EventList
+							key={el.id}
+							location={el.location}
+							name={el.name}
+							organization_name={el.organization_name}
+							date={el.date}
+							cover={el.cover}
+						/>
+					))}
 				<div className='btn2'>
 					<button>Следующая страница</button>
 				</div>

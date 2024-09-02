@@ -13,9 +13,7 @@ export const Vacancies = () => {
 		navigate('/addVacancy')
 	}
 	if (loading) {
-		return (
-				<Loading />
-		)
+		return <Loading />
 	}
 
 	return (
@@ -27,22 +25,23 @@ export const Vacancies = () => {
 					</button>
 					<div className='jobs-contents'>
 						{data &&
-							data.map((job: any, index: number) => {
-								return (
-									<VacancyList
-										key={index}
-										companyName={job.organization_name}
-										jobTitle={job.position}
-										priceFrom={job.price_from}
-										priceTo={job.price_to}
-										type={job.type}
-										city={job.city}
-										currency={job.currency}
-										salary={job.salary}
-										organization_icon={job.organization_icon}
-									/>
-								)
-							})}
+							data
+								.map((job: any,) => {
+									return (
+										<VacancyList
+											id={job.index}
+											companyName={job.organization_name}
+											jobTitle={job.position}
+											priceFrom={job.price_from}
+											priceTo={job.price_to}
+											type={job.type}
+											city={job.city}
+											currency={job.currency}
+											salary={job.salary}
+											organization_icon={job.organization_icon}
+										/>
+									)
+								})}
 					</div>
 					<button className='next-page'>Следующая страница</button>
 				</div>

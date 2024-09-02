@@ -1,12 +1,12 @@
 import { FaFacebookSquare, FaTelegramPlane, FaYoutube } from 'react-icons/fa'
 import { TfiGithub } from 'react-icons/tfi'
+import { useLocation, useNavigate } from 'react-router-dom'
 import footerLogo from '../../assets/img/Dev kg logo.svg'
 import footerlogoKg from '../../assets/img/footer logo Kg.png'
-import { useNavigate } from 'react-router-dom'
 
 export function Footer() {
 	const navigate = useNavigate()
-
+const location = useLocation()
 	function navigateTologoFooter() {
 		navigate('/')
 		setTimeout(() => {
@@ -16,12 +16,17 @@ export function Footer() {
 			}
 		}, 300)
 	}
+const isMainPagesAdd = location.pathname === '/MainPagesAdd'	
 
 	return (
 		<div id='footer'>
 			<div className='footer'>
 				<div className='container'>
-					<div className='footer__content'>
+					<div
+						className={`footer__content ${
+							isMainPagesAdd ? 'footer__content--padded' : ''
+						}`}
+					>
 						<img
 							className='main-dev-logo'
 							onClick={navigateTologoFooter}
@@ -72,4 +77,3 @@ export function Footer() {
 		</div>
 	)
 }
-

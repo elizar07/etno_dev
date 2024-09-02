@@ -8,6 +8,7 @@ export function Header() {
 	function navigateTologoHeader() {
 		navigate('/')
 	}
+
 	const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false)
 	const [menu, setMenu] = useState<boolean>(false)
 	const nav = useNavigate()
@@ -22,11 +23,15 @@ export function Header() {
 		Cookies.remove('authtoken')
 		setIsLoggedIn(false)
 	}
-
-
+	const isMainPagesAdd = location.pathname === '/MainPagesAdd'
+console.log(location.pathname);
 
 	return (
-		<div className='header'>
+		<div
+			className={`header ${
+				isMainPagesAdd ? 'header--padded' : ''
+			}`}
+		>
 			<div className='container'>
 				<div className='header__content'>
 					<div className='header-logo'>
@@ -62,7 +67,6 @@ export function Header() {
 								</button>
 							</div>
 						)}
-			
 					</div>
 				</div>
 			</div>
