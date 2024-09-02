@@ -16,7 +16,8 @@ const useFetch = (
 			const response = await fetch(url)
 			const data = await response.json()
 			if (data.statusCode === 200) {
-				setData(data.data)
+				const sortedData = data.data.sort((a: any, b: any) => b.id - a.id)
+				setData(sortedData)
 			}
 		} catch (error) {
 			console.log(error)

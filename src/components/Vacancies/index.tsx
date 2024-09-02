@@ -26,7 +26,6 @@ export const Vacancies = () => {
 					<div className='jobs-contents'>
 						{data &&
 							data
-								.sort((a: any, b: any) => b.id - a.id)
 								.map((job: any,) => {
 									return (
 										<VacancyList

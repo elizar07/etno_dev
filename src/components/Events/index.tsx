@@ -23,7 +23,6 @@ export function Events() {
 				</div>
 
 				{data
-					.sort((a: any, b: any) => b.id - a.id)
 					.map((el: any) => (
 						<EventList
 							key={el.id}

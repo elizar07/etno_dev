@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 const MainPagesAdd = () => {
 	const navigate = useNavigate()
 	function navigateTologoHeader() {

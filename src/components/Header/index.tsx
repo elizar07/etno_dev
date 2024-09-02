@@ -23,9 +23,15 @@ export function Header() {
 		Cookies.remove('authtoken')
 		setIsLoggedIn(false)
 	}
+	const isMainPagesAdd = location.pathname === '/MainPagesAdd'
+console.log(location.pathname);
 
 	return (
-		<div className='header'>
+		<div
+			className={`header ${
+				isMainPagesAdd ? 'header--padded' : ''
+			}`}
+		>
 			<div className='container'>
 				<div className='header__content'>
 					<div className='header-logo'>
